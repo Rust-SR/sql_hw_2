@@ -244,5 +244,17 @@ values(1,13),
 (37,4), 
 (38,5), 
 (39,3), 
-(70,13);
+(40,13);
 
+--SQL HomeWork 3. Joins
+
+-- 1. Вывести всех работников чьи зарплаты есть в базе, вместе с зарплатами.
+select employee_name, monthly_salary
+from employee_salary 
+inner join employees on employee_salary.employee_id = employees.id 
+inner join salary on employee_salary.salary.id = salary.id;
+
+ select e.employee_name, s.monthly_salary
+ from employee_salary es 
+ join employees e  on es.employee_id = e.id
+ join salary s on es.salary_id = s.id;
